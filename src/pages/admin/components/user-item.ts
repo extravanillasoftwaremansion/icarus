@@ -1,43 +1,16 @@
 import { Component } from "../../../decorators/component/index.js";
+import { Props, Prop } from '../../../decorators/prop/index.js'
 
 @Component({
   tag: "user-item",
 })
+@Props(['user'])
 export class UserItem extends HTMLElement {
-  _observedAttributes;
+  @Prop user: { name: string } | null;
 
   constructor() {
     super();
-
-    // Define the observed attribute(s)
-    this._observedAttributes = ["user"];
-  }
-
-  static get observedAttributes() {
-    return ["user"];
-  }
-
-  connectedCallback() {
-    console.log("Custom element added to page.");
-  }
-
-  disconnectedCallback() {
-    console.log("Custom element removed from page.");
-  }
-
-  adoptedCallback() {
-    console.log("Custom element moved to new page.");
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (name === "user") {
-      // Handle changes to the "user" attribute here
-      // Parse the new value if needed
-      const user = JSON.parse(newValue);
-      // Do something with the user data
-      // For example, update the content of the element
-      this.shadowRoot.getElementById("user-item").textContent = user.name;
-    }
+    console.log(this.user);
   }
 
   render() {
@@ -52,7 +25,10 @@ export class UserItem extends HTMLElement {
             padding: 10px;
           }
         </style>
-        <li id="user-item" class="user-item"></li>
+        ${
+          this?.user?.name ? `
+            <li id="user-item" class="user-item">${this?.user?.name || "Loading..."}</li>` : ""
+        }
       `;
 
     return template;

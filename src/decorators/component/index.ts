@@ -12,10 +12,13 @@ export function Component(config: ComponentConfig) {
     class CustomElement extends constructor {
       constructor() {
         super();
-        const shadowRoot = config.shadow ? this.attachShadow({ mode: "open" }) : undefined;
+        const shadowRoot = !config.shadow
+          ? this.attachShadow({ mode: "open" })
+          : undefined;
 
         if (shadowRoot) {
-          const jsxElement = constructor.prototype.render(shadowRoot) ?? this.render();
+          const jsxElement =
+            constructor.prototype.render(shadowRoot) ?? this.render();
           if (jsxElement) {
             shadowRoot.appendChild(jsxElement);
           } else {

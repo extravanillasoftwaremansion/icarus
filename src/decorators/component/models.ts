@@ -16,4 +16,9 @@ export interface ComponentConfig {
    * Indicates whether to use shadow DOM (optional).
    */
   shadow?: boolean;
+
+  /**
+   * An array of observed attributes (optional).
+   */
+  observedAttributes?: string[];
 }
