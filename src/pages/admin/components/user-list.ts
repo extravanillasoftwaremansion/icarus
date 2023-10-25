@@ -1,4 +1,5 @@
 import { Component } from "../../../decorators/component/index.js";
+import { UserItem } from './user-item.js';
 
 @Component({
   tag: "user-list",
@@ -8,8 +9,6 @@ export class UserList extends HTMLElement {
 
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
-
     // Initialize the user data
     this.users = [];
 
@@ -35,9 +34,10 @@ export class UserList extends HTMLElement {
     const userFragment = document.createDocumentFragment();
 
     this.users.forEach((user) => {
-      const userItem = document.createElement("user-item");
-      userItem.setAttribute("user", JSON.stringify(user));
-      userFragment.appendChild(userItem);
+      const item = new UserItem();
+      item.user = user;
+      const jsx = item.render();
+      userFragment.appendChild(jsx);
     });
 
     this.shadowRoot.appendChild(userFragment);

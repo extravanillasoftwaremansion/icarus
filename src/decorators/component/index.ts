@@ -12,13 +12,21 @@ export function Component(config: ComponentConfig) {
     class CustomElement extends constructor {
       constructor() {
         super();
+        this.renderComponent();
+      }
+
+      render(): HTMLElement {
+        throw new Error("You must implement render in your component class.");
+      }
+
+      renderComponent() {
         const shadowRoot = !config.shadow
           ? this.attachShadow({ mode: "open" })
           : undefined;
 
-        if (shadowRoot) {
+        if (shadowRoot && typeof constructor.prototype.render === "function") {
           const jsxElement =
-            constructor.prototype.render(shadowRoot) ?? this.render();
+            constructor?.prototype?.render(this) ?? this.render();
           if (jsxElement) {
             shadowRoot.appendChild(jsxElement);
           } else {
@@ -29,10 +37,6 @@ export function Component(config: ComponentConfig) {
         } else {
           // no shadow set
         }
-      }
-
-      render(): HTMLElement {
-        throw new Error("You must implement render in your component class.");
       }
     }
 

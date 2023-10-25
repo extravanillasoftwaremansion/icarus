@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx live-server ./dist",
-    "compile": "npx tsc",
-    "package": "bash ./utils/package-app.sh"
+    "compile": "tsc",
+    "package": "bash ./utils/package-app.sh",
+    "prepare": "npm run package && npm run compile"
   },
   "author": "Ashton Morris",
   "license": "GPL-3.0-or-later",
