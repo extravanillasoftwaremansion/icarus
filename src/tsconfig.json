@@ -15,14 +15,13 @@
     "resolveJsonModule": true,
     "downlevelIteration": true,
     "jsx": "react",
-    "jsxFactory": "h",
+    "jsxFactory": "JSX",
     "jsxFragmentFactory": "document.createDocumentFragment",
     "noEmit": false
   },
   "include": [
     ".ts",
     ".tsx",
-    "jsx.js",
     "pages/**/*.ts",
     "decorators/**/*.ts"
   ]

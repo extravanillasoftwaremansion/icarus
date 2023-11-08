@@ -20,3 +20,5 @@ export function State(target: any, key: string) {
 
   Object.defineProperty(target, key, config);
 }
+
+export default State;
