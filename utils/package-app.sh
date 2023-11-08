@@ -10,10 +10,10 @@ mkdir -p dist/src
 
 # Move all files from /src to /dist/src
 cp -r src/* dist/src
-cp -r utils/jsx.ts dist/src/jsx.ts
 
 cd dist/src
 tsc          
 
 # Remove all .ts files from the 'dist' folder
 find -name "*.ts" -type f -delete
+find -name "*.tsx" -type f -delete

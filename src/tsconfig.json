@@ -22,7 +22,7 @@
   "include": [
     ".ts",
     ".tsx",
-    "jsx.ts",
+    "jsx.js",
     "pages/**/*.ts",
     "decorators/**/*.ts"
   ]
