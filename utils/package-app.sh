@@ -1,13 +1,19 @@
 #!/bin/bash
 
-# Clean the existing 'dist' folder
-rm -rf dist
+if [ -d "dist" ]; then
+  # Remove the 'dist' folder and its contents
+  rm -r dist
+fi
 
-# Create the 'dist' folder if it doesn't exist
-mkdir -p dist
+# Create the 'dist/src' directory if it doesn't exist
+mkdir -p dist/src
 
-# Copy all files and folders from 'src' to 'dist'
-cp -r src/. dist
+# Move all files from /src to /dist/src
+cp -r src/* dist/src
+
+cd dist/src
+tsc          
 
 # Remove all .ts files from the 'dist' folder
-find dist -name "*.ts" -type f -delete
+find -name "*.ts" -type f -delete
+find -name "*.tsx" -type f -delete

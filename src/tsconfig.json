@@ -3,11 +3,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "target": "es6",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -17,8 +13,16 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "jsx": "react-jsx",
     "downlevelIteration": true,
-    "outDir": "./dist",
-  }
+    "jsx": "react",
+    "jsxFactory": "JSX",
+    "jsxFragmentFactory": "document.createDocumentFragment",
+    "noEmit": false
+  },
+  "include": [
+    ".ts",
+    ".tsx",
+    "pages/**/*.ts",
+    "decorators/**/*.ts"
+  ]
 }
