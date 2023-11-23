@@ -1,7 +1,3 @@
-Certainly! Here's a basic README template for your Icarus library:
-
----
-
 # Icarus
 
 Icarus is a collection of decorators for simplifying the development of web components in JavaScript or TypeScript.
@@ -121,7 +117,3 @@ export class UserList extends HTMLElement {
   }
 }
 ```
-
----
-
-Feel free to customize the README further based on additional information or features you'd like to highlight.
