@@ -15,5 +15,5 @@ cd dist/src
 tsc          
 
 # Remove all .ts files from the 'dist' folder
-find -name "*.ts" -type f -delete
-find -name "*.tsx" -type f -delete
+# find -name "*.ts" -type f -delete
+# find -name "*.tsx" -type f -delete
