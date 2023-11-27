@@ -11,12 +11,18 @@
     "dev": "npx live-server ./dist/src",
     "deploy": "",
     "semanticdeploy": "",
-    "pub": "npm publish -access=public"
+    "pub": "npm publish -access=public",
+    "install:go": "npx ts-node utils/install-wasm-go.ts",
+    "uninstall:go": "npx ts-node utils/uninstall-wasm-go.ts",
+    "compile:go": "npx ts-node utils/compile-go.ts",
+    "destroy:go": "bash ./utils/destroy-go.sh"
   },
   "author": "Ashton Morris",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "lite-server": "^2.6.1",
+    "prettier": "^3.1.0",
+    "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   }
 }

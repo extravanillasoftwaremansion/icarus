@@ -17,7 +17,8 @@
     "jsx": "react",
     "jsxFactory": "JSX",
     "jsxFragmentFactory": "document.createDocumentFragment",
-    "declaration": true
+    "declaration": true,
+    "noImplicitAny": false
   },
   "include": [".ts", ".tsx", "pages/**/*.ts", "decorators/**/*.ts", "test.tsx"]
 }
