@@ -6,16 +6,19 @@
   "types": "dist/src/decorators/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "bash ./utils/deploy.sh",
+    "build:go": "bash ./utils/build-go.sh",
+    "destroy:build": "rm -r dist",
+    "dev": "npx live-server ./dist/src",
     "package": "bash ./utils/package-app.sh",
     "unpackage": "rm -r dist",
-    "dev": "npx live-server ./dist/src",
-    "deploy": "",
-    "semanticdeploy": "",
     "pub": "npm publish -access=public",
     "install:go": "npx ts-node utils/install-wasm-go.ts",
     "uninstall:go": "npx ts-node utils/uninstall-wasm-go.ts",
     "compile:go": "npx ts-node utils/compile-go.ts",
-    "destroy:go": "bash ./utils/destroy-go.sh"
+    "destroy:go": "bash ./utils/destroy-go.sh",
+    "deploy": "",
+    "semanticdeploy": ""
   },
   "author": "Ashton Morris",
   "license": "GPL-3.0-or-later",
