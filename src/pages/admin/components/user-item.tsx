@@ -2,19 +2,18 @@ import { Props, Prop } from "../../../decorators/prop/index.js";
 import { State } from "../../../decorators/state/index.js";
 import { JSX } from "../../../decorators/jsx/index.js";
 import { Go } from "../../../decorators/index.js";
-import { run } from "./functions";
 
 @Props(["user"])
 export class UserItem {
   @Prop user: { name: string; id: number } | null;
   @State private count: number = 0;
 
-  increment(el) {
+  private increment(el) {
     this.count = this.count + 1;
     el.srcElement.innerText = this.count;
   }
 
-  renderItems() {
+  private renderItems() {
     const userName = this?.user?.name;
 
     if (userName) {
@@ -103,13 +102,34 @@ export class UserItem {
     }
   `
   )
-  runJSInGO() {
-    run();
+  private _runJSFuncsInGolang() {
+    function goodbye() {
+      return "bye dude!";
+    }
+
+    function cool() {
+      return "cool";
+    }
+
+    function add(x, y) {
+      return x + y;
+    }
+
+    const funcs = [
+      { name: "goodbye" },
+      { name: "cool" },
+      { name: "add", args: [1, 2] },
+    ];
+
+    //@ts-ignore
+    const res = consec(JSON.stringify(funcs));
+
+    console.log(res);
   }
 
-  onClick(el: any) {
+  private onClick(el: any) {
     this.increment(el);
-    this.runJSInGO();
+    this._runJSFuncsInGolang();
   }
 
   render() {

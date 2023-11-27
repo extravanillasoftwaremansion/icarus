@@ -12,11 +12,11 @@
     "dev": "npx live-server ./dist/src",
     "package": "bash ./utils/package-app.sh",
     "unpackage": "rm -r dist",
-    "pub": "npm publish -access=public",
     "install:go": "npx ts-node utils/install-wasm-go.ts",
     "uninstall:go": "npx ts-node utils/uninstall-wasm-go.ts",
     "compile:go": "npx ts-node utils/compile-go.ts",
     "destroy:go": "bash ./utils/destroy-go.sh",
+    "pub": "npm publish -access=public",
     "deploy": "",
     "semanticdeploy": ""
   },
