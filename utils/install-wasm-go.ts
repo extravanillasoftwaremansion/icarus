@@ -23,7 +23,7 @@ const wasmExecJsScriptTag = '<script src="./wasm_exec.js"></script>';
 
 const updatedIndexHtmlContent = indexHtmlContent.replace(
   "</head>",
-  `  ${instantiateJsScriptTag}\n  ${wasmExecJsScriptTag}\n</head>`
+  `${wasmExecJsScriptTag}\n ${instantiateJsScriptTag}\n </head>`
 );
 
 fs.writeFileSync(indexHtmlPath, updatedIndexHtmlContent);

@@ -44,8 +44,20 @@ function visit(node) {
       const distFilePath = path.join(distDir, "gowasm");
       fs.renameSync(tempDir, distFilePath);
 
+      // Copy the contents of distFilePath to dist/src
+      const srcDir = path.join(distDir, "src");
+      if (!fs.existsSync(srcDir)) {
+        fs.mkdirSync(srcDir);
+      }
+
+      fs.readdirSync(distFilePath).forEach((file) => {
+        const srcFilePath = path.join(distFilePath, file);
+        const destFilePath = path.join(srcDir, file);
+        fs.copyFileSync(srcFilePath, destFilePath);
+      });
+
       // Clean up the temporary directory
-      // fs.rmdirSync(tempDir, { recursive: true });
+      fs.rmdirSync(tempDir, { recursive: true });
 
       console.log(`Compiled Go code for ${fileName}`);
     }
