@@ -1,5 +1,5 @@
 {
-  "name": "icar.us",
+  "name": "1car.us",
   "version": "0.0.1",
   "description": "A no-dependency Stencil/React alternative written in TypeScript.",
   "main": "dist/src/decorators/index.js",
@@ -27,5 +27,8 @@
     "prettier": "^3.1.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "1car.us": "^0.0.1"
   }
 }

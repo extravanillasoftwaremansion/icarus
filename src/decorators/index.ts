@@ -1,5 +1,5 @@
-export { default as Component } from "./component";
-export { default as Prop, Props } from "./prop";
-export { default as State } from "./state";
-export { default as JSX } from "./jsx";
-export { default as Go } from "./go";
+export { default as Component } from "./component/index.js";
+export { default as Prop, Props } from "./prop/index.js";
+export { default as State } from "./state/index.js";
+export { default as JSX } from "./jsx/index.js";
+export { default as Go } from "./go/index.js";

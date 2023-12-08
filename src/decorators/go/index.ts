@@ -11,8 +11,8 @@ export function Go(goCode: string) {
     if (typeof descriptor.value === "function") {
       // Save the Go code in a map
       goCodeMap[propertyKey as string] = goCode;
-      // Rest of the decorator logic
-      // ...
+      // @ts-ignore
+      console.log(go);
     } else {
       throw new Error("The @Go decorator can only be applied to methods.");
     }

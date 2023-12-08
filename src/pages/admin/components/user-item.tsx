@@ -1,7 +1,4 @@
-import { Props, Prop } from "../../../decorators/prop/index.js";
-import { State } from "../../../decorators/state/index.js";
-import { JSX } from "../../../decorators/jsx/index.js";
-import { Go } from "../../../decorators/index.js";
+import { Go, JSX, State, Props, Prop } from "../../../decorators/index.js";
 
 @Props(["user"])
 export class UserItem {
