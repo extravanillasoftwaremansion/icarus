@@ -10,14 +10,16 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+    "module": "ES6",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "downlevelIteration": true,
     "jsx": "react",
     "jsxFactory": "JSX",
     "jsxFragmentFactory": "document.createDocumentFragment",
-    "declaration": true
+    "declaration": true,
+    "noImplicitAny": false,
+    "isolatedModules": true
   },
-  "include": [".ts", ".tsx", "pages/**/*.ts", "decorators/**/*.ts", "test.tsx"]
+  "include": ["pages/**/*.ts", "decorators/**/*.ts"]
 }

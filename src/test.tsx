@@ -1,4 +1,4 @@
-import { Component, Prop, Props, State, JSX } from "../dist/src/decorators";
+import { Component, Prop, Props, State, JSX } from "../src/decorators";
 
 @Props(["user"])
 export class UserItem {
