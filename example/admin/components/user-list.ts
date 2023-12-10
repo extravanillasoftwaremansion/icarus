@@ -1,5 +1,7 @@
-import { Component } from "../../../decorators/component/index.js";
-import { UserItem } from './user-item.js';
+// pages/admin/components/user-list.ts
+
+import { Component } from "1car.us";
+import { UserItem } from "./user-item.js";
 
 @Component({
   tag: "user-list",

@@ -1,3 +1,5 @@
+// src/decorators/prop/index.ts
+
 export function Props(attributes: string[]) {
   return function <T extends { new (...args: any[]): {} }>(constructor: T) {
     class CustomElement extends constructor {

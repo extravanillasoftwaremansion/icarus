@@ -1,19 +1,18 @@
 #!/bin/bash
 
-if [ -d "dist" ]; then
+if [ -d "dist/src" ]; then
   # Remove the 'dist' folder and its contents
-  rm -r dist
+  rm -r dist/src
+  rm -r dist/node_modules
 fi
 
-# Create the 'dist/src' directory if it doesn't exist
-mkdir -p dist/src
+mkdir dist/src
+mkdir dist/node_modules
 
 # Move all files from /src to /dist/src
 cp -r src/* dist/src
+cp -4 node_modules dist/node_modules
+cp -r package.json dist/src
 
 cd dist/src
 tsc          
-
-# Remove all .ts files from the 'dist' folder
-# find -name "*.ts" -type f -delete
-# find -name "*.tsx" -type f -delete

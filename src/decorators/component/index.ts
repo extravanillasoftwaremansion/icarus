@@ -1,3 +1,5 @@
+// src/decorators/component/index.ts
+
 import { loadAndApplyStyles } from "./loadStyles.js";
 import { ComponentConfig } from "./models.js";
 

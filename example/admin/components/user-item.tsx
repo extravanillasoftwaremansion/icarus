@@ -1,6 +1,6 @@
-import { Props, Prop } from "../../../decorators/prop/index.js";
-import { State } from "../../../decorators/state/index.js";
-import { JSX } from '../../../decorators/jsx/index.js';
+// pages/admin/components/user-item.ts
+
+import { Props, Prop, State, JSX } from "1car.us/dist/index";
 
 @Props(["user"])
 export class UserItem {
@@ -37,10 +37,9 @@ export class UserItem {
       <div>
         {this.renderItems()}
 
-        <button
-          id="incrementButton"
-          onclick={(el) => this.increment(el)}
-        >{String(this.count)}</button>
+        <button id="incrementButton" onclick={(el) => this.increment(el)}>
+          {String(this.count)}
+        </button>
       </div>
     );
   }

@@ -1,22 +1,27 @@
 {
-  "name": "icar.us",
-  "version": "0.0.1",
+  "name": "1car.us",
+  "version": "0.0.3",
   "description": "A no-dependency Stencil/React alternative written in TypeScript.",
-  "main": "dist/src/decorators/index.js",
-  "types": "dist/src/decorators/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "./dist/index.mjs",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "package": "bash ./utils/package-app.sh",
+    "package": "tsup",
     "unpackage": "rm -r dist",
-    "dev": "npx live-server ./dist/src",
+    "build": "bash utils/package-app.sh",
+    "dev": "npx live-server dist/src",
+    "pub": "npm publish -access=public",
     "deploy": "",
-    "semanticdeploy": "",
-    "pub": "npm publish -access=public"
+    "semanticdeploy": ""
   },
   "author": "Ashton Morris",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "lite-server": "^2.6.1",
+    "tsup": "^8.0.1",
     "typescript": "^5.2.2"
   }
 }

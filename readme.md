@@ -7,7 +7,7 @@ Icarus is a collection of decorators for simplifying the development of web comp
 Install Icarus via npm:
 
 ```bash
-npm install icar.us
+npm install 1car.us
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install icar.us
 Import the necessary decorators from the library in your web component files:
 
 ```javascript
-import { Component, Prop, Props, State, JSX } from "icar.us";
+import { Component, Prop, Props, State, JSX } from "1car.us";
 ```
 
 ## Example
@@ -23,7 +23,7 @@ import { Component, Prop, Props, State, JSX } from "icar.us";
 ### UserItem Component
 
 ```javascript
-import { Prop, State, Props, JSX } from "icar.us";
+import { Prop, State, Props, JSX } from "1car.us";
 
 @Props(["user"])
 export class UserItem {
@@ -72,7 +72,7 @@ export class UserItem {
 ### UserList Component
 
 ```javascript
-import { Component } from "icarus-library";
+import { Component } from "1car.us";
 
 @Component({
   tag: "user-list",
