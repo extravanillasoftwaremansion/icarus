@@ -1,0 +1,27 @@
+{
+  "name": "my_project",
+  "version": "1.0.0",
+  "description": "A small HTML website with a Node server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "transpile": "npx webpack --config ./webpack.config.js",
+    "c": "bash compile.sh"
+  },
+  "keywords": [
+    "HTML",
+    "Node.js",
+    "website"
+  ],
+  "author": "Ashton Morris",
+  "license": "MIT",
+  "dependencies": {
+    "1car.us": "^0.0.6"
+  },
+  "devDependencies": {
+    "glob": "^10.3.10",
+    "typescript": "^5.2.2",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  }
+}
