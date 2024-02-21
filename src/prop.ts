@@ -23,8 +23,6 @@ export function Props(attributes: string[]) {
         }
       }
     }
-
-    return CustomElement;
   };
 }
 

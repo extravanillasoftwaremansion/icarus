@@ -1,27 +1,26 @@
 {
   "name": "1car.us",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "A no-dependency Stencil/React alternative written in TypeScript.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "module": "./dist/index.mjs",
+  "main": "dist/script.js",
+  "types": "dist/script.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "package": "tsup",
+    "package": "npx rollup --config rollup.config.js",
     "unpackage": "rm -r dist",
-    "build": "bash utils/package-app.sh",
-    "dev": "npx live-server dist/src",
-    "pub": "npm publish -access=public",
-    "deploy": "",
-    "semanticdeploy": ""
+    "build": "tsc && npm run package",
+    "publish": "npm publish -access-public"
   },
   "author": "Ashton Morris",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "tsup": "^8.0.1",
+    "@types/node": "^20.11.6",
+    "rollup": "^4.9.1",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.2.2"
   }
 }
