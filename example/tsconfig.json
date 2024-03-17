@@ -12,6 +12,7 @@
     "noImplicitOverride": false,
     "baseUrl": "./",
     "outDir": "./public",
+    "noEmit": false,
     "paths": {
       "1car.us": ["../node_modules/1car.us/dist/script.js"]
     }

@@ -1,21 +1,12 @@
 const path = require('path');
+const glob = require('glob');
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: () => {
+    const componentsPath = path.join(__dirname, 'components');
+    return glob.sync(path.join(componentsPath, '*.component.js'));
+  },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
-  },
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-    ],
-  },
+    path: path.resolve(__dirname, 'public'),
+  }
 };

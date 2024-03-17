@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "transpile": "npx webpack --config ./webpack.config.js",
     "package": "npx rollup --config rollup.config.js",
     "unpackage": "rm -r dist",
     "build": "tsc && npm run package",

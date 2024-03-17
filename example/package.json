@@ -2,11 +2,10 @@
   "name": "my_project",
   "version": "1.0.0",
   "description": "A small HTML website with a Node server",
-  "main": "server.js",
   "scripts": {
-    "start": "npm run c && node server.js",
-    "transpile": "npx webpack --config ./webpack.config.js",
-    "c": "bash compile.sh"
+    "start": "npm run compile && node server.js",
+    "compile": "bash compile.sh",
+    "transpile": "npx webpack --config ./webpack.config.js"
   },
   "keywords": [
     "HTML",

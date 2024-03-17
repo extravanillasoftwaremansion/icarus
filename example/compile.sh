@@ -10,13 +10,14 @@ if [ ! -d "$js_dir" ]; then
 fi
 
 tsc
-echo "TypeScript files compiled to dist"
+echo "TypeScript components compiled."
 
 npm run transpile
-echo "JavaScript files transpiled in dist"
+echo "JavaScript files transpiled to public"
 
-# Delete JavaScript files from the directory
+# Delete JavaScript files
 echo "Deleting JavaScript files from $js_dir ..."
 find "$js_dir" -type f -name '*.js' ! -name 'main.js' -delete
+rm /components/*.js
 
 echo "JavaScript files deleted successfully."
