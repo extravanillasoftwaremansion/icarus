@@ -15,7 +15,7 @@
   "author": "Ashton Morris",
   "license": "MIT",
   "dependencies": {
-    "1car.us": "^0.0.6"
+    "1car.us": "^0.0.7"
   },
   "devDependencies": {
     "glob": "^10.3.10",

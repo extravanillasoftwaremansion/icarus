@@ -1,9 +1,11 @@
 // components/user-list.ts
 import { Component } from "1car.us";
-import { UserItem } from "./user-item.component.js";
+import { UserItem } from "./user-item.component";
 
 @Component({
   tag: "user-list",
+  shadow: true,
+  styleUrl: "./components/userlist.css"
 })
 export class UserList extends HTMLElement {
   users: any[];

@@ -12,12 +12,13 @@ fi
 tsc
 echo "TypeScript components compiled."
 
+rm ./public/main.js
+
 npm run transpile
 echo "JavaScript files transpiled to public"
 
 # Delete JavaScript files
 echo "Deleting JavaScript files from $js_dir ..."
 find "$js_dir" -type f -name '*.js' ! -name 'main.js' -delete
-rm /components/*.js
 
 echo "JavaScript files deleted successfully."

@@ -76,6 +76,8 @@ import { Component } from "1car.us";
 
 @Component({
   tag: "user-list",
+  shadow: true,
+  styleUrl: "./components/userlist.css"
 })
 export class UserList extends HTMLElement {
   users: any[];

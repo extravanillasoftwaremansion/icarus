@@ -3,7 +3,7 @@ const glob = require('glob');
 
 module.exports = {
   entry: () => {
-    const componentsPath = path.join(__dirname, 'components');
+    const componentsPath = path.join(__dirname, 'public');
     return glob.sync(path.join(componentsPath, '*.component.js'));
   },
   output: {

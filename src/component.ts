@@ -28,15 +28,11 @@ export interface ComponentConfig {
 export function applyStyles(
   cssText: string,
   config: ComponentConfig,
-  target: any
 ) {
   if (config.shadow) {
-    const shadow = target.prototype.shadowRoot;
-    if (shadow) {
       const style = document.createElement("style");
       style.textContent = cssText;
-      shadow.appendChild(style);
-    }
+      document?.querySelector(`.${config.tag}`)?.shadowRoot?.appendChild(style);
   } else {
     const style = document.createElement("style");
     style.textContent = cssText;
@@ -47,13 +43,12 @@ export function applyStyles(
 export async function loadAndApplyStyles(
   url: string,
   config: ComponentConfig,
-  target: any
 ) {
   try {
     const response = await fetch(url);
     if (response.ok) {
       const cssText = await response.text();
-      applyStyles(cssText, config, target);
+      applyStyles(cssText, config);
     } else {
       console.error(`Failed to load CSS file: ${url}`);
     }
@@ -81,7 +76,7 @@ export function Component(config: ComponentConfig) {
       }
 
       renderComponent() {
-        const shadowRoot = !config.shadow
+        const shadowRoot = config.shadow
           ? this.attachShadow({ mode: "open" })
           : undefined;
 
@@ -103,7 +98,7 @@ export function Component(config: ComponentConfig) {
 
     if (config.styleUrl) {
       // Load and apply styles from the external CSS file
-      loadAndApplyStyles(config.styleUrl, config, constructor);
+      loadAndApplyStyles(config.styleUrl, config);
     }
 
     customElements.define(config.tag, CustomElement);
