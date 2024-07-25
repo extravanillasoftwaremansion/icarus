@@ -1,7 +1,7 @@
 {
-  "name": "my_project",
+  "name": "flashweb",
   "version": "1.0.0",
-  "description": "A small HTML website with a Node server",
+  "description": "A Flashcard application. ",
   "scripts": {
     "start": "npm run compile && node server.js",
     "compile": "bash compile.sh",
@@ -15,7 +15,8 @@
   "author": "Ashton Morris",
   "license": "MIT",
   "dependencies": {
-    "1car.us": "^0.0.7"
+    "1car.us": "^0.0.7",
+    "chamoy": "^0.0.2"
   },
   "devDependencies": {
     "glob": "^10.3.10",

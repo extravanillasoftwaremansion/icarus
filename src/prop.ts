@@ -16,10 +16,20 @@ export function Props(attributes: string[]) {
         oldValue: string,
         newValue: string
       ) {
-        if (attributes.includes(name)) {
+        if (attributes.includes(name) && oldValue !== newValue) {
           // Handle changes to the specified attributes
           // For example, update the corresponding instance variable
           this[name] = JSON.parse(newValue);
+          // @ts-ignore
+          const style = this.shadowRoot.querySelector("style");
+          // @ts-ignore
+          this.shadowRoot.innerHTML = "";
+          // @ts-ignore
+          const jsx = constructor.prototype.render();
+          // @ts-ignore
+          if (jsx) this.shadowRoot.appendChild(jsx);
+          // @ts-ignore
+          if (style) this.shadowRoot.appendChild(style);
         }
       }
     }

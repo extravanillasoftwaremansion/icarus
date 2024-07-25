@@ -10,7 +10,7 @@
     "jsxFactory": "JSX",
     "jsxFragmentFactory": "document.createDocumentFragment",
     "noImplicitOverride": false,
-    "baseUrl": "./",
+    "baseUrl": "./components",
     "outDir": "./public",
     "noEmit": false,
     "paths": {
