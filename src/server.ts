@@ -33,19 +33,28 @@ export function Route(method, path) {
     if (!target.constructor.routes) {
       target.constructor.routes = {};
     }
-    target.constructor.routes[`${method.toUpperCase()} ${path}`] = {
+
+    const routeKey = `${method.toUpperCase()} ${path}`;
+    target.constructor.routes[routeKey] = {
       handler: descriptor.value,
       middlewares: [],
     };
+
+    // Store the method and path directly in the handler for later use
+    target.constructor.routes[routeKey].method = method.toUpperCase();
+    target.constructor.routes[routeKey].path = path;
   };
 }
 
 export function Middleware(middlewareFunc) {
   return function (target, propertyKey) {
-    const route =
-      target.constructor.routes[`${target.httpMethod} ${target.path}`];
-    if (route) {
-      route.middlewares.push(middlewareFunc);
+    const routes = target.constructor.routes;
+
+    // Find the route where the middleware should be applied
+    for (const routeKey in routes) {
+      if (routes[routeKey].handler.name === propertyKey) {
+        routes[routeKey].middlewares.push(middlewareFunc);
+      }
     }
   };
 }

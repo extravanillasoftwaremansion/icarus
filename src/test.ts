@@ -1,6 +1,6 @@
 import { WebServer, Middleware, Route } from "./server";
 
-@WebServer({ port: 3000 })
+@WebServer({ port: 4000 })
 class UserAPI {
   @Route("GET", "/users")
   @Middleware((req, res) => {
