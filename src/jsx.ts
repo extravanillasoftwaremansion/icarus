@@ -1,5 +1,4 @@
 // src/decorators/jsx/index.ts
-
 export function JSX(tag: string, props: object, ...children: any[]) {
   const element = document.createElement(tag);
 
