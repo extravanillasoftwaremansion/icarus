@@ -1,5 +1,4 @@
 // src/component.ts
-
 /**
  * Configuration options for the component.
  */
@@ -25,14 +24,11 @@ export interface ComponentConfig {
   observedAttributes?: string[];
 }
 
-export function applyStyles(
-  cssText: string,
-  config: ComponentConfig,
-) {
+export function applyStyles(cssText: string, config: ComponentConfig) {
   if (config.shadow) {
-      const style = document.createElement("style");
-      style.textContent = cssText;
-      document?.querySelector(`.${config.tag}`)?.shadowRoot?.appendChild(style);
+    const style = document.createElement("style");
+    style.textContent = cssText;
+    document?.querySelector(`.${config.tag}`)?.shadowRoot?.appendChild(style);
   } else {
     const style = document.createElement("style");
     style.textContent = cssText;
@@ -40,10 +36,7 @@ export function applyStyles(
   }
 }
 
-export async function loadAndApplyStyles(
-  url: string,
-  config: ComponentConfig,
-) {
+export async function loadAndApplyStyles(url: string, config: ComponentConfig) {
   try {
     const response = await fetch(url);
     if (response.ok) {

@@ -1,3 +1,5 @@
+// src/server.ts
+
 import http from "http";
 
 export function WebServer(config) {
@@ -56,5 +58,28 @@ export function Middleware(middlewareFunc) {
         routes[routeKey].middlewares.push(middlewareFunc);
       }
     }
+  };
+}
+
+export function ParseBody() {
+  return function (target, propertyKey, descriptor) {
+    const originalMethod = descriptor.value;
+
+    descriptor.value = function (req, res) {
+      let body = "";
+
+      // Collect data chunks
+      req.on("data", (chunk) => {
+        body += chunk;
+      });
+
+      // When all data is received, process it and call the original method
+      req.on("end", () => {
+        req.body = body; // Attach the parsed body to the request object
+        originalMethod.call(this, req, res); // Call the original method with the new req.body
+      });
+    };
+
+    return descriptor;
   };
 }

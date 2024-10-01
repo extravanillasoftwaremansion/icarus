@@ -1,4 +1,5 @@
-import { WebServer, Middleware, Route } from "./server";
+// src/test.ts
+import { WebServer, Middleware, Route, ParseBody } from "./server";
 
 @WebServer({ port: 4000 })
 class UserAPI {
@@ -8,19 +9,17 @@ class UserAPI {
   })
   getUsers(req, res) {
     res.end(JSON.stringify([{ id: 1, name: "John Doe" }]));
+    // test
+    // curl -X POST http://localhost:4000/users
   }
 
   @Route("POST", "/users")
+  @ParseBody()
   createUser(req, res) {
-    let body = "";
-    req.on("data", (chunk) => {
-      body += chunk;
-    });
-    req.on("end", () => {
-      res.end(body);
-    });
+    res.end(req.body);
   }
+  // test
+  // curl -X POST http://localhost:4000/users -d '{"id": 2, "name": "Jane Doe"}' -H "Content-Type: application/json"
 }
 
 const server = new UserAPI();
-export default server;
