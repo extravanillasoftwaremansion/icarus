@@ -16,7 +16,8 @@
     "typeRoots": ["node_modules/@types"],
     "types": ["node"],
     "esModuleInterop": true,
-    "inlineSourceMap": false
+    "inlineSourceMap": false,
+    "experimentalDecorators": true
   },
   "exclude": ["example"]
 }

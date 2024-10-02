@@ -1,5 +1,4 @@
-// src/decorators/state/index.ts
-
+// src/state.ts
 const stateMap = new WeakMap();
 
 export function State(target: any, key: string) {
