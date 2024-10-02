@@ -1,12 +1,16 @@
 {
   "name": "1car.us",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A no-dependency Stencil/React alternative written in TypeScript.",
   "main": "dist/script.js",
   "types": "dist/script.d.ts",
   "files": [
     "dist"
   ],
+  "repository": {
+    "url": "https://github.com/extravanillasoftwaremansion/icarus",
+    "type": "github"
+  },
   "scripts": {
     "test": "npx tsx src/test.ts",
     "compile": "npx tsc",
@@ -15,15 +19,29 @@
     "build": "npm run compile && npm run package",
     "publish": "npm publish -access-public"
   },
-  "author": "Ashton Morris",
+  "author": "Ashton James Snow Morris Jefferson",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "@types/node": "^20.11.6",
     "rollup": "^4.9.1",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-typescript2": "^0.36.0",
-    "ts-node": "^10.9.2",
     "tsx": "^4.19.1",
     "typescript": "^5.2.2"
-  }
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "html",
+    "css",
+    "react",
+    "angular",
+    "vue",
+    "frontend",
+    "backend",
+    "fullstack",
+    "opensource",
+    "library",
+    "education"
+  ]
 }
