@@ -1,6 +1,6 @@
 {
   "name": "1car.us",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "A no-dependency Stencil/React alternative written in TypeScript.",
   "main": "dist/script.js",
   "types": "dist/script.d.ts",

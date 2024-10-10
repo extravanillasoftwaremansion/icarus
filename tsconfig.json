@@ -19,5 +19,5 @@
     "inlineSourceMap": false,
     "experimentalDecorators": true
   },
-  "exclude": ["example"]
+  "exclude": ["example", "test.ts"]
 }
